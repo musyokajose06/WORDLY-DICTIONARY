@@ -39,8 +39,10 @@ async function fetchApi(word) {
     infoText.style.color = '#000';
     infoText.innerHTML = `Searching the meaning of <span>"${word}"</span>`;
     let url = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
-    let result = await fetch(url).then(res => res.json());
-    console.log(result);
+    let result = await 
+        fetch(url)
+        .then(res => res.json());
+        console.log(result);
     if (result.title) {
         infoText.innerHTML = `Can't find the meaning of <span>"${word}"</span>. Please, try to search for another word.`;
         wordList.innerHTML = '';
